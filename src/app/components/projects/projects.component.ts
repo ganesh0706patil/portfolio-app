@@ -33,7 +33,7 @@ export class ProjectsComponent {
     },
     {
       name: 'Fake News Detection Using NLP',
-      description: 'This project detects fake news by fetching articles from News API and NewsData.io, comparing them with Wikipedia content using BERT embeddings and cosine similarity. It classifies the news as true or fake based on similarity scores.',
+      description: 'Fake news detection system using BERT embeddings and cosine similarity to compare news articles with Wikipedia and classify them as true or fake.',
       technologies: ["Transformer's  Model", 'Natural Language Processing', 'Python', 'Jupyter Notebook'],
       src: './assets/projects/fakeNews.webp',
       link: 'https://github.com/ganesh0706patil/Fake-News-Detection-Using-NLP-based-Transformers',
@@ -47,7 +47,7 @@ export class ProjectsComponent {
     },
     {
       name: 'Spell Recommendation System',
-      description: 'A Python app with a user-friendly interface for correcting spelling mistakes and providing word suggestions. Built with tkinter, it uses a Trie data structure to efficiently find and suggest words based on a loaded text file. The app allows users to add their own text files and get instant corrections as they type.',
+      description: 'Python App that corrects spelling mistakes and suggests words using a Trie data structure, with the ability to load text files for instant corrections.',
       technologies: ['Python','Tkinter', 'Trie Data Structure', 'Edit Distance Algo'],
       src: './assets/projects/Spell2.webp',
       link: 'https://github.com/ganesh0706patil/Spell-Recommendation-System',

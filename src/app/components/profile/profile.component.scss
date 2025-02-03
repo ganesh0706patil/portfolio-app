@@ -3,16 +3,33 @@
   padding-top: 50px; /* Ensure space from top */
 }
 
-/* Profile Image */
 .profile-pic {
   max-width: 250px;
   width: 100%; /* Ensure the image is responsive */
-  height: 280px;
+  height: 250px; /* Set the height to match the width */
   border-radius: 50%; /* Keeps it circular */
   object-fit: cover; /* Ensures the image covers the space properly */
+  object-position: center top; /* Position the image to the top of the circle */
   border: 3px solid #1255ba; /* Stylish border with a primary color */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animation */
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  #profile {
+    padding-top: 30px;
+  }
+
+  .profile-pic {
+    max-width: 200px;
+    height: 200px; /* Ensures the height matches the width on mobile */
+    object-position: center top; /* Adjust for mobile */
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
 }
 
 /* Hover effect */
