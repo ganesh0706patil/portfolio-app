@@ -1,0 +1,39 @@
+name: Angular Build and Deploy
+
+on:
+  push:
+    branches:
+      - main  # Update to match your repository's branch name
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build Angular App
+        run: ng build --configuration=production --base-href="/portfolio-app/"
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist/portfolio
+          branch: gh-pages
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Delete old workflow runs
+        uses: Mattraks/delete-workflow-runs@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          repository: ganesh0706patil/portfolio-app
+          retain_days: 10
+          keep_minimum_runs: 5

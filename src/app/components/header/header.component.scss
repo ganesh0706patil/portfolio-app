@@ -1,0 +1,71 @@
+// SCSS for Header Container
+.header-container {
+  background-color: transparent;
+  padding-top: 0;
+  padding-bottom: 30px;
+}
+
+// SCSS for Navbar
+.navbar {
+  background-color: transparent !important; // Fully transparent background
+  color: white;
+  border-radius: 10px;
+  box-shadow: none; // Remove box shadow
+  position: fixed; // Keep it fixed at the top
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.3s ease-in-out;
+
+  // Apply blur effect to make the navbar readable on different backgrounds
+  backdrop-filter: blur(10px);
+}
+
+.navbar-brand {
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.navbar-toggler {
+  border: 0px;
+}
+
+.navbar-toggler-icon {
+  background-color: white; // White color for the toggle icon
+}
+
+.navbar-nav .nav-item {
+  margin-left: 20px;
+}
+
+.navbar-nav .nav-link {
+  color: white;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #007bff;
+}
+
+// When the user scrolls, keep the navbar transparent but apply a slight blur for visibility
+.navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.1) !important; // Transparent white layer
+  backdrop-filter: blur(10px); // Apply blur to maintain readability
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2); // Subtle shadow
+}
+
+@media (max-width: 576px) {
+  .navbar-brand {
+    font-size: 1.5rem;
+  }
+  .navbar-nav {
+    text-align: center;
+  }
+  .navbar-nav .nav-item {
+    margin: 10px 0;
+  }
+}
