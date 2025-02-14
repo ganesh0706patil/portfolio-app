@@ -29,7 +29,7 @@ export class ProjectsComponent {
       description: 'Feel free to check out the code for my portfolio on Github.',
       technologies: ['Angular', 'TypeScript', 'HTML', 'SCSS', 'Bootstrap', 'GitHub Pages', 'Github Actions'],
       src: './assets/projects/Linkedin_bg.png',
-      link: 'https://github.com/ganesh0706patil/portfolio',
+      link: 'https://github.com/ganesh0706patil/portfolio-app',
     },
     {
       name: 'Fake News Detection Using NLP',
