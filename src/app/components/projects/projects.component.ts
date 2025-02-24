@@ -58,6 +58,13 @@ export class ProjectsComponent {
       technologies: ['Java'],
       src: './assets/projects/flight2.avif',
       link: 'https://github.com/ganesh0706patil/flight-planner-algorithms-java',
+    },
+    {
+      name: 'Gas Utility',
+      description: "A web application for booking gas services, tracking requests, and managing customer support efficiently.",
+      technologies: ['Django, Tailwind CSS, MySQL'],
+      src: './assets/projects/Home2.png',
+      link: 'https://github.com/ganesh0706patil/Gas_Utility_App',
     }
   ];
 }
