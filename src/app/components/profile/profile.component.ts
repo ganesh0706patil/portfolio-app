@@ -17,7 +17,7 @@ export class ProfileComponent {
   }
 
   openResume() {
-    window.open("https://drive.google.com/file/d/1yXz2RSo3LjjeXkyM7QvYxOV3MwgtI9kL/view?usp=sharing", '_blank');
+    window.open("assets/Portfolio_CV.pdf", '_blank');
   }
 
   goToLinkedin() {
