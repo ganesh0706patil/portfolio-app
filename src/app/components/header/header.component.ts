@@ -13,6 +13,7 @@
 // }
 import { Component, HostListener } from '@angular/core';
 import { NavLinksComponent } from "../shared/nav-links/nav-links.component";
+import { DarkModeService } from '../../services/dark-mode.service';
 
 @Component({
   selector: 'app-header',
@@ -23,6 +24,9 @@ import { NavLinksComponent } from "../shared/nav-links/nav-links.component";
 })
 export class HeaderComponent {
 
+  isDark = false; // by default light mode is enabled
+  constructor(private darkModeService: DarkModeService) { }
+
   @HostListener('window:scroll', [])
   onWindowScroll() {
     const navbar = document.querySelector('.navbar')!;
@@ -31,5 +35,10 @@ export class HeaderComponent {
     } else {
       navbar.classList.remove('scrolled');
     }
+  }
+
+  toggleTheme() {
+    this.isDark = !this.isDark;
+    this.darkModeService.toggleDarkMode(this.isDark);
   }
 }

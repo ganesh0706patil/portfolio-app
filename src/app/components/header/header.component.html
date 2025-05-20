@@ -12,6 +12,15 @@
         
         <!-- Navbar Links -->
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <label class="switch">
+            <input 
+              type="checkbox"
+              [checked]="isDark"
+              (change)="toggleTheme()"
+              aria-label="Toggle dark mode"
+            />
+            <span class="slider round"></span>
+          </label>          
           <ul class="navbar-nav">
             <app-nav-links></app-nav-links>
           </ul>

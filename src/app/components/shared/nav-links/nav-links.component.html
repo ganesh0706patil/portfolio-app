@@ -1,6 +1,6 @@
 <ul class="navbar-nav">
   @for (item of navItems; track item) {
-    <li class="nav-item px-3 fs-4">
+    <li class="nav-item px-3 fs-4 #nav-names">
       <a class="nav-link" (click)="scrollTo(item.toLowerCase())" >{{ item }}</a>
     </li>
   }
