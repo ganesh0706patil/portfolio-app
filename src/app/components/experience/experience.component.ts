@@ -7,6 +7,14 @@ interface ExperienceItem {
   index?: number;
 }
 
+interface WorkExperience {
+  title: string;
+  company: string;
+  date: string;
+  location: string;
+  description: string[];
+}
+
 @Component({
   selector: 'app-experience',
   standalone: true,
@@ -43,4 +51,17 @@ export class ExperienceComponent {
     ).flat();
   }
 
+  public workExperiences: WorkExperience[] = [
+    {
+      title: "SDE Intern",
+      company: "Espyr.io",
+      date: "Jun 2025 - Aug 2025",
+      location: "Remote",
+      description: [
+        "Built a full-stack coding platform with an AI mentor, reducing candidate problem-solving time by 40%.",
+        "Developed a multi-agent AI system for context-aware mentoring, real-time feedback, and evaluation.",
+        "Implemented RESTful APIs for Session and User management using Spring Boot.",
+      ]
+    }
+  ]
 }

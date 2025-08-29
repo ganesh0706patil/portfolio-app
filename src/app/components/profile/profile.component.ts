@@ -17,7 +17,7 @@ export class ProfileComponent {
   }
 
   openResume() {
-    window.open("assets/Portfolio_CV.pdf", '_blank');
+    window.open("assets/Ganesh_VIIT.pdf", '_blank');
   }
 
   goToLinkedin() {

@@ -169,3 +169,26 @@ body.dark-theme .nav-link {
 body.dark-theme .icon {
   color: white !important;
 }
+
+body.dark-theme .timeline-dot {
+    background-color: #1e1e1e !important; /* Match the dark page background */
+}
+
+  /* Fix arrow color for ODD items */
+body.dark-theme .timeline-item:nth-child(odd) .timeline-content::after {
+    border-color: transparent transparent transparent #2a2a2a !important;
+}
+
+  /* Fix arrow color for EVEN items */
+body.dark-theme .timeline-item:nth-child(even) .timeline-content::after {
+    border-color: transparent #2a2a2a transparent transparent !important;
+}
+
+body.dark-theme .timeline-content {
+  background-color: #2a2a2a !important;
+  border-color: #444 !important;
+
+  h3, h4, .timeline-date, li {
+    color: #e0e0e0 !important;
+  }
+}

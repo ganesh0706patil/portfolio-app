@@ -1,10 +1,11 @@
+// experience.component.scss
+
+@use "sass:math";
+
+// --- Keyframes and styles for the skill set slider (no changes needed here) ---
 @keyframes slide {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-100%);
-  }
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
 }
 
 .experience-items {
@@ -12,24 +13,16 @@
   padding: 60px 0;
   white-space: nowrap;
   position: relative;
-}
-
-.experience-items:before,
-.experience-items:after {
-  position: absolute;
-  top: 0;
-  width: 250px;
-  height: 100%;
-  content: "";
-  z-index: 2;
-}
-
-.experience-items:before {
-  left: 0;
-}
-
-.experience-items:after {
-  right: 0;
+  &:before, &:after {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    content: "";
+    z-index: 2;
+  }
+  &:before { left: 0; }
+  &:after { right: 0; }
 }
 
 .experience-slide {
@@ -41,4 +34,145 @@
   height: 80px !important;
   width: auto !important;
   margin: 0 40px !important;
+}
+
+// --- Default (Light Theme) styles for the Work Experience Timeline ---
+$timeline-color: #007bff;
+$timeline-dot-size: 20px;
+$timeline-line-width: 4px;
+
+.timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: $timeline-line-width;
+    background-color: $timeline-color;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -(math.div($timeline-line-width, 2));
+  }
+}
+
+.timeline-item {
+  padding: 10px 40px;
+  position: relative;
+  width: 50%;
+
+  .timeline-dot {
+    position: absolute;
+    width: $timeline-dot-size;
+    height: $timeline-dot-size;
+    background-color: white; // Light theme default
+    border: 4px solid $timeline-color;
+    top: 25px;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  .timeline-content {
+    padding: 20px 30px;
+    background-color: #f8f9fa; // Light theme default
+    border: 1px solid #dee2e6;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+
+    h3 {
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: #343a40; // Light theme text
+    }
+
+    h4 {
+      font-size: 1.1rem;
+      color: #495057; // Light theme text
+      margin-top: 5px;
+    }
+
+    .timeline-date {
+      font-size: 0.9rem;
+      color: #6c757d; // Light theme text
+      font-style: italic;
+      margin-bottom: 15px;
+    }
+
+    ul {
+      padding-left: 20px;
+      li {
+        margin-bottom: 8px;
+        line-height: 1.5;
+        color: rgb(94, 91, 91); // Light theme text
+      }
+    }
+  }
+}
+
+.timeline-item:nth-child(odd) {
+  left: 0;
+  .timeline-dot {
+    right: math.div(-$timeline-dot-size, 2) - 2px;
+  }
+  .timeline-content::after {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: -15px;
+    border: medium solid white;
+    border-width: 10px 0 10px 15px;
+    border-color: transparent transparent transparent #f8f9fa; // Light theme arrow
+  }
+}
+
+.timeline-item:nth-child(even) {
+  left: 50%;
+  .timeline-dot {
+    left: math.div(-$timeline-dot-size, 2) - 2px;
+  }
+  .timeline-content::after {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: -15px;
+    border: medium solid white;
+    border-width: 10px 15px 10px 0;
+    border-color: transparent #f8f9fa transparent transparent; // Light theme arrow
+  }
+}
+
+// Media query for mobile responsiveness
+@media screen and (max-width: 768px) {
+  .timeline::after {
+    left: 31px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+
+    &:nth-child(odd), &:nth-child(even) {
+      left: 0;
+    }
+    
+    .timeline-dot {
+      left: 22px;
+    }
+
+    .timeline-content::after {
+      left: -15px;
+      border-width: 10px 15px 10px 0;
+      border-color: transparent #f8f9fa transparent transparent; // Light theme arrow on mobile
+    }
+  }
 }
